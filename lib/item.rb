@@ -15,4 +15,10 @@ class Item
     @bids.values.max
   end
 
+  def close_bidding
+    @bids.each do |bidder, bid|
+      bidder.freeze
+      bid.freeze
+    end
+  end
 end
