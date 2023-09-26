@@ -151,7 +151,11 @@ Some notes:
 | Method Name | Return Value |
 | ----------- | ------------ |
 | `Auction#bidders` | Array of bidders' names as `String`; ex: ["Megan", "Bob", "Mike"] |
+
+
 | `Auction#bidder_info` | `Hash` with the following format: key of `Attendee` object pointing to a value of a `Hash`. The sub-hash should have a key of `:budget` as a `Symbol` and value of their budget as an `Integer`. The sub-hash should have a second key of `:items` as a `Symbol` with a value that is an `Array` of items the attendee has bid on. See example below. |
+
+
 | `Item#close_bidding` | Return value of your choice; ensure it follows the spec above such that closing the bidding on an item makes it so the item will no longer accept new bids. |
 
 Example return value hash for `bidder_info`

@@ -13,7 +13,7 @@ class Auction
     @items.map(&:name)
   end
 
-  def unpopular_item
+  def unpopular_items
     @items.select { |item| item.bids.empty? }
   end
   
@@ -32,7 +32,7 @@ class Auction
       bi  << key.name
       end
     end  
-    bi
+    bi.uniq
   end
 
   def bidder_info
@@ -45,7 +45,6 @@ class Auction
     end
     bi
   end
-  
 end
 
 

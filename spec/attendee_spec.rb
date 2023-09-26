@@ -1,5 +1,4 @@
 require './lib/attendee'
-require './lib/item'
 
 RSpec.describe Attendee do
   before(:each) do
