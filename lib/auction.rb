@@ -24,6 +24,29 @@ class Auction
     end
     pr.compact.sum
   end
+
+  def bidders
+    bi = []
+    @items.each do |item|
+      item.bids.keys.each do |key|
+      bi  << key.name
+      end
+    end  
+    bi
+  end
+
+  def bidder_info
+    bi = Hash.new { |hash_name, key| hash_name[key] = {budget: 0, items: []} }
+    @items.each do |item|
+      item.bids.each do |bidder, bid|
+        # require 'pry'; binding.pry
+        bi[bidder][:budget] = bidder.budget
+        bi[bidder][:items] << item
+      end
+    end
+    bi
+  end
+
   
 
 end
